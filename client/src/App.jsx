@@ -11,8 +11,8 @@ function App() {
       <header>
         <nav>
           <div className="flex flex-col items-center">
-            <div className="w-[90%] gap-4 mb-3 text-[#5D2B7E] sm:flex-row">
-              <div className="w-full h-[130px]">
+            <div className="w-[90%] gap-4 mb-3 text-[#5D2B7E] sm:flex sm:flex-row sm:justify-between sm:w-[95%] sm:mb-0">
+              <div className="w-full h-[130px] sm:w-[30%] sm:h-[100px]">
                 <Logo />
               </div>
               <Headerbar />
