@@ -2,8 +2,9 @@ import './App.css'
 import Headerbar from './component/Headerbar'
 import Logo from './component/Logo'
 import NavbarTop from './component/NavbarTop'
-import Hero from './component/Hero'
 import NavbarDesktop from './component/NavbarDesktop'
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -25,10 +26,14 @@ function App() {
               <NavbarTop />
             </div>
           </div>
-          <Hero />
-        </nav>
-      </header>
-    </>
+          </nav>
+        </header>
+
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products/" element={<ProductDetails />} />
+      </Routes>
+      </>
   )
 }
 
