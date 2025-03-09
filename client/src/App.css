@@ -1,0 +1,26 @@
+.badge {
+  z-index: 2;
+  border: #4B0082;
+  color: #edd1ff;
+  height: 40px;
+  width: 80px;
+  animation-name: shiningBadge;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shiningBadge {
+  from {
+    background-color: white;
+    color: #4B0082;
+  }
+  50% {
+    background-color: purple;
+    color: #edd1ff;
+  }
+  to {
+    background-color: white;
+    color: #4B0082;
+  }
+}

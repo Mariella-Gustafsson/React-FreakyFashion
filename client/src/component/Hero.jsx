@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="relative sm:h-[300px] lg:h-[470px]">
       <img
-        src="images/Hero.jpg"
+        src="http://localhost:8000/images/Hero.jpg"
         alt="2 modeller som bär kläder från Freaky Fashion"
         className="opacity-70 sm:w-full sm:h-full sm:object-cover"
       />
