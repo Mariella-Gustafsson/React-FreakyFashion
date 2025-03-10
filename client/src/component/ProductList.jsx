@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProducts } from "./api";
+import { fetchProducts } from "../services/api";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
@@ -11,14 +11,10 @@ const ProductList = () => {
   const [error, setError] = useState(null);
 
   function checkPublishedDate (publishDates) {
-    console.log(publishDates);
     let filterFutureProducts = publishDates.filter(product => {
       const productDate = new Date(product.publish_date);
-      console.log(productDate);
       return productDate <= currentDate;
     });
-
-    console.log(filterFutureProducts);
   
     filterFutureProducts = filterFutureProducts.sort((a,b) => new Date(b.publish_date) - new Date(a.publish_date));
     const newestProducts = filterFutureProducts.slice(0,8);
@@ -35,10 +31,7 @@ const ProductList = () => {
   useEffect(() => {
     fetchProducts()
     .then(data => {
-      console.log(data);
       const newestProducts = checkPublishedDate(data);
-      console.log("Fetch products blocket");
-      console.log(newestProducts);
       setNewestProducts(newestProducts);
       setLoading(false);
     })
