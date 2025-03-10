@@ -18,12 +18,22 @@ app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
 
+app.get('/api/products/:url_slug', (req, res, next) => {
+
+  const slug = req.params.url_slug;
+
+  const product = db.prepare('SELECT id, name, price, brand, description, picture_url, url_slug, publish_date FROM products WHERE url_slug = ?')
+                  .get(slug);
+
+  res.json(product);
+    
+  })
+
 app.get('/api/products', (req, res, next) => {
 
 const products = db.prepare('SELECT id, name, price, brand, description, picture_url, url_slug, publish_date FROM products')
                 .all();
 
-console.log(products);
 res.json(products);
   
 })

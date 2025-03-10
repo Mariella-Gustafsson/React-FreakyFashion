@@ -1,9 +1,10 @@
 import './App.css'
 import Headerbar from './component/Headerbar'
-import Logo from './component/Logo'
+import Logo from './assets/Logo'
 import NavbarTop from './component/NavbarTop'
 import NavbarDesktop from './component/NavbarDesktop'
 import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products/" element={<ProductDetails />} />
+        <Route path="/products/:url_slug" element={<ProductPage />} />
       </Routes>
       </>
   )

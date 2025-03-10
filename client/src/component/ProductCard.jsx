@@ -1,11 +1,10 @@
 import '../App.css';
+import { Link } from "react-router-dom";
 
 const ProductCard = ({product}) => {
-
-  console.log(product);
   
   return (
-    <a href={`/products/${product.url_slug}`}>
+    <Link to={`/products/${product.url_slug}`}>
       <figure>
         <div className="relative">
           <img
@@ -23,7 +22,7 @@ const ProductCard = ({product}) => {
           <span className="col-span-2 text-sm">{product.brand}</span>
         </figcaption>
       </figure>
-    </a>
+    </Link>
 
   )
 }
