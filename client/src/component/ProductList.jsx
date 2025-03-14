@@ -26,8 +26,7 @@ const ProductList = () => {
         showBadge }; //returnerar en ny array av objekt med tillägget av showBadge
     })
   }
-
-  console.log("dET GÄR ÄR produktlist");
+  
   useEffect(() => {
     fetchProducts()
     .then(data => {

@@ -4,15 +4,15 @@ import FooterNavigation from "./FooterNavigation";
 
 function Footer () {
   return (
-    <>
-    <FooterIcons />
-    <div className="sm:hidden">
-      <FooterAccordion />
-    </div>
-    <div className="hidden sm:block">
-      <FooterNavigation />
-    </div>
-    </>
+    <footer>
+      <FooterIcons />
+      <div className="sm:hidden">
+        <FooterAccordion />
+      </div>
+      <div className="hidden sm:block">
+        <FooterNavigation />
+      </div>
+    </footer>
   )
 }
 

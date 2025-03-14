@@ -7,6 +7,7 @@ import NavbarDesktop from './component/NavbarDesktop'
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
 import { Routes, Route } from "react-router-dom";
+import SearchPage from './pages/SearchPage'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:url_slug" element={<ProductPage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
 
       <Footer />
