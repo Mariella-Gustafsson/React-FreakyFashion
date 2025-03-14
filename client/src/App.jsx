@@ -1,5 +1,6 @@
 import './App.css'
 import Headerbar from './component/Headerbar'
+import Footer from './component/Footer/Footer'
 import Logo from './assets/Logo'
 import NavbarTop from './component/NavbarTop'
 import NavbarDesktop from './component/NavbarDesktop'
@@ -34,6 +35,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products/:url_slug" element={<ProductPage />} />
       </Routes>
+
+      <Footer />
       </>
   )
 }
