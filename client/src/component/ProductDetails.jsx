@@ -1,4 +1,24 @@
+
+import { useCart } from "../context/CartContext";
+import { useEffect, useState } from "react";
+
 function ProductDetails ({product}) {
+  const { cart, addToCart, removeFromCart } = useCart();
+  const [existingCartItem, setExistingCartItem] = useState(false);
+
+  useEffect(() => {
+    const itemInCart = cart.some(item => item.id === product.id);
+    setExistingCartItem(itemInCart);
+  }, [cart, product.id]);
+
+  const handleClick = () => {
+
+    if (existingCartItem) {
+      removeFromCart(product);
+    } else {
+      addToCart(product);
+    }
+  };
 
   return (
     <article className="m-4 md:grid md:grid-cols-2">
@@ -16,9 +36,10 @@ function ProductDetails ({product}) {
 
       <button
         type="button"
-        className="button-styles flex items-center md:w-1/2"
+        className="border-1 border-black p-4 bg-[#5D2B7E] text-[#e9acca] font-bold shadow-md shadow-black w-[70%]"
+        onClick={handleClick}
       >
-        Lägg i varukorg
+        { existingCartItem ? "Ta bort från varukorg" : "Lägg i varukorg" }
       </button>
     </div>
   </article>

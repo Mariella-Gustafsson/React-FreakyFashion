@@ -10,9 +10,7 @@ function SearchField() {
     setSearchTerm(input);
 
     if (input.trim()) {
-      console.log(input);
       const encodedSearchTerm = encodeURIComponent(input.trim());
-      console.log(encodedSearchTerm);
       navigate(`/search?query=${encodedSearchTerm}`);
     } else {
       navigate("/");
