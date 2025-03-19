@@ -1,5 +1,3 @@
-import '../App.css'
-
 const Headerbar = () => {
   return (
     <ul className="flex justify-between font-bold text-lg text-[#5D2B7E] lg:items-center lg:gap-4">

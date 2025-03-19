@@ -40,19 +40,40 @@ export const CartProvider = ({ children }) => {
    const removeFromCart = (product) => {
 
     setCart((cart) => {
-      const updatedCart = cart.filter(item => item.id !== product.id)
-  
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
+      const existingProduct = cart.find(item => item.id === product.id);
 
-    return updatedCart;});
+      if (existingProduct) {
+
+        let updatedCart;
+
+        if (product.quantity > 1) {
+          updatedCart = cart.map(item =>
+            item.id === product.id ? { ...item, quantity: product.quantity - 1 } : item
+          )
+        } else {
+          updatedCart = cart.filter(item => item.id !== product.id);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+        return updatedCart;
+      }
+
+      return cart;
+    });
   };
 
    // Ändra antalet av en produkt
-   const updateQuantity = (productId, quantity) => {
-    setCart((prevCart) => 
-      prevCart.map(item =>
-        item.id === productId ? { ...item, quantity } : item
+   const updateQuantity = (product, quantity) => {
+    setCart((cart) => {
+      const updatedCart = cart.map(item =>
+        item.id === product ? { ...item, quantity } : item
       )
+
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+      return updatedCart;
+    }
     );
   };
 

@@ -1,5 +1,5 @@
-import '../App.css'
-import SearchField from './Search/SearchField';
+import SearchField from '../Search/SearchField';
+import { Link } from 'react-router-dom';
 
 const Headerbar = () => {
   return (
@@ -8,9 +8,9 @@ const Headerbar = () => {
       <a href="#">
         <i className="bi bi-heart-fill text-2xl flex-shrink-0 text-[#5D2B7E] hover:text-[#eb9fc5]"></i>
       </a>
-      <a href="/checkout">
+      <Link to={"/basket"}>
         <i className="bi bi-basket-fill text-2xl flex-shrink-0 text-[#5D2B7E] hover:text-[#eb9fc5]"></i>
-      </a>
+      </Link>
     </div>
   );
 };
