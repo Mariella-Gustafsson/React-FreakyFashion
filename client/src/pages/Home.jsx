@@ -4,11 +4,11 @@ import ProductList from '../component/ProductList'
 function Home() {
   return (
     <>
-  <Hero />
-<main>
-  <ProductList />
-</main>
-</>
+      <Hero />
+      <main>
+        <ProductList />
+      </main>
+    </>
   )
 }
 

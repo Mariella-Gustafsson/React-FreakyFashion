@@ -2,6 +2,7 @@ import { fetchProduct } from "../services/api";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import ProductDetails from '../component/ProductDetails'
+import { CartProvider } from "../context/CartContext";
 
 function ProductPage () {
 
@@ -41,7 +42,9 @@ function ProductPage () {
     }
 
   return (
-    <ProductDetails product = {product} />
+    <CartProvider>
+      <ProductDetails product = {product} />
+    </CartProvider>
   )
 }
 

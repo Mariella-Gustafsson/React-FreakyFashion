@@ -1,6 +1,6 @@
 import NavbarTop from "./NavbarTop";
 import Headerbar from "./Headerbar";
-import Logo from "../assets/Logo";
+import Logo from "../../assets/Logo";
 
 const NavbarDesktop = () => {
   return (
