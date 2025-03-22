@@ -19,6 +19,7 @@ function App() {
       <Route path="/basket" element={<MainLayout><Cart /></MainLayout>} />
       <Route path="/admin/products" element={<AdminLayout><AdminList /></AdminLayout>} />
       <Route path="/admin/products/new" element={<AdminLayout><AdminNewProduct /></AdminLayout>} />
+      <Route path="/admin/products" element={<AdminLayout><AdminList /></AdminLayout>} />
     </Routes>
   )
 }
