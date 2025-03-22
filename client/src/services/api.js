@@ -7,3 +7,10 @@ export async function fetchProduct (url_slug) {
   const response = await fetch(`http://localhost:8000/api/products/${url_slug}`);
   return response.json();
 }
+
+export async function removeProduct (id) {
+  const response = await fetch(`http://localhost:8000/api/products/${id}`, {
+    method: "DELETE"
+  });
+  return response.ok;
+}

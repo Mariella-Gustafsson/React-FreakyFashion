@@ -25,8 +25,18 @@ app.get('/api/products/:url_slug', (req, res, next) => {
 
   const slug = req.params.url_slug;
 
-  const product = db.prepare('SELECT id, name, price, brand, description, picture_url, url_slug, publish_date FROM products WHERE url_slug = ?')
-                  .get(slug);
+  const product = db.prepare(`
+    SELECT id, 
+            name, 
+            price, 
+            brand, 
+            description, 
+            picture_url, 
+            url_slug, 
+            publish_date 
+            FROM products 
+            WHERE url_slug = ?`)
+    .get(slug);
 
   res.json(product);
     
@@ -42,7 +52,8 @@ app.get('/api/products', (req, res, next) => {
           description, 
           picture_url, 
           url_slug, 
-          publish_date 
+          publish_date,
+          SKU 
     FROM products`)
         .all();
 
@@ -76,5 +87,20 @@ app.post('/api/products', (req, res, next) => {
   insert.run(product);
 
   res.status(201).send();
+
+})
+
+app.delete('/api/products/:id', (req, res, next) => {
+
+  const id = req.params.id;
+
+  const insert = db.prepare(`
+    DELETE FROM products
+    WHERE id = ?`
+  );
+
+  insert.run(id);
+
+  res.status(200).send();
 
 })
