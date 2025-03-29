@@ -1,4 +1,4 @@
-import CartDesktop from "../component/CartDesktop";
+import CartDesktop from "../component/CartCheckout/CartDesktop";
 import { CartProvider } from "../context/CartContext";
 
 function Cart() {

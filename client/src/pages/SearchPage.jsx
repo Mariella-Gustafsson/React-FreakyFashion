@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../services/api";
-import ProductCard from "../component/ProductCard";
+import ProductCard from "../component/Products/ProductCard";
 
 function SearchPage() {
   const location = useLocation();

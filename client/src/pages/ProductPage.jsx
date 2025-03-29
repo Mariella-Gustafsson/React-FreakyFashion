@@ -1,9 +1,9 @@
 import { fetchProduct, fetchProducts } from "../services/api";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import ProductDetails from '../component/ProductDetails'
+import ProductDetails from '../component/Products/ProductDetails'
 import { CartProvider } from "../context/CartContext";
-import Carousel from "../component/Carousel";
+import Carousel from "../component/Products/Carousel";
 
 function ProductPage () {
 

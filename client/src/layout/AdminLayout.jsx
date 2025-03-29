@@ -1,4 +1,4 @@
-import AdminAside from "../component/AdminAside";
+import AdminAside from "../component/Admin/AdminAside";
 import AdminHeader from "../component/Header/AdminHeader";
 
 function AdminLayout ({children}) {
