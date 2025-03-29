@@ -1,7 +1,9 @@
-import '../App.css';
+import '../../App.css';
 import { Link } from "react-router-dom";
 
 const ProductCard = ({product}) => {
+
+  console.log(product);
   
   return (
     <Link to={`/products/${product.url_slug}`}>
@@ -11,9 +13,11 @@ const ProductCard = ({product}) => {
             src={`http://localhost:8000/${product.picture_url}`}
             alt={`${product.name}`}
           />
-          <span className="badge justify-center absolute font-bold p-2 text-lg top-4 left-4">
+          {product.showBadge ?
+          <div className="badge justify-center absolute font-bold py-4 px-6 text-lg top-4 left-4 rounded-lg">
             Nyhet
-          </span>
+          </div>
+          : <span></span> }
           <i className="bi bi-heart text-4xl absolute bottom-4 right-4"></i>
         </div>
         <figcaption className="grid grid-cols-2 my-3 gap-2">

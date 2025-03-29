@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchProducts } from "../services/api";
+import { fetchProducts } from "../../services/api";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
 
   const currentDate = new Date(); // dagens datum
+  const currentDateMs = currentDate.getTime();
   const sevenDaysMs = 7 * 24 * 60 * 60 * 1000; // 7 dagar i milisekunder, används för att jämföra datum
   const [products, setNewestProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +14,8 @@ const ProductList = () => {
   function checkPublishedDate (publishDates) {
     let filterFutureProducts = publishDates.filter(product => {
       const productDate = new Date(product.publish_date);
-      return productDate <= currentDate;
+      const productDateMs = productDate.getTime();
+      return productDateMs <= currentDateMs;
     });
   
     filterFutureProducts = filterFutureProducts.sort((a,b) => new Date(b.publish_date) - new Date(a.publish_date));
@@ -21,7 +23,11 @@ const ProductList = () => {
     
     return newestProducts.map(product => { // map metoden används här här att skapa en ny array
       const productDate = new Date(product.publish_date); //omvandlar datum till datumformat
-      const showBadge = productDate >= (currentDate - sevenDaysMs);
+      console.log(product.price);
+      console.log(productDate);
+      const productDateMs = productDate.getTime();
+      const showBadge = productDateMs >= (currentDateMs - sevenDaysMs);
+      console.log(showBadge);
       return { ...product,
         showBadge }; //returnerar en ny array av objekt med tillägget av showBadge
     })
