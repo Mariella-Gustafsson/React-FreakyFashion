@@ -47,12 +47,15 @@ function SearchPage() {
 
   return (
     <main>
-      <section className="mx-4 my-5 sm:grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {
-      searchResults.map((product => {
-        return <ProductCard key={product.id} product = {product} />;
-      }))
-    }
+      <section className="flex flex-col m-5">
+        <h1 className="text-3xl font-bold mb-5 text-center">Hittade {searchResults.length} produkter</h1>
+        <div className="sm:grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {
+          searchResults.map((product => {
+            return <ProductCard key={product.id} product = {product} />;
+          }))
+          }
+        </div>
       </section>
     </main>
   )

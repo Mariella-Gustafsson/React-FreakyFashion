@@ -10,6 +10,7 @@ const ProductCard = ({product}) => {
       <figure>
         <div className="relative">
           <img
+            className="opacity-75 hover:opacity-100"
             src={`http://localhost:8000/${product.picture_url}`}
             alt={`${product.name}`}
           />

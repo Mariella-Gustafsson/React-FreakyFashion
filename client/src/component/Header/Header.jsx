@@ -1,5 +1,5 @@
 import Logo from "../../assets/Logo";
-import Headerbar from "./NavbarTop";
+import Headerbar from "./Headerbar";
 import NavbarDesktop from "./NavbarDesktop";
 import NavbarTop from "./NavbarTop";
 
@@ -13,7 +13,7 @@ function Header () {
             <div className="w-full h-[130px] sm:w-[30%] sm:h-[100px]">
               <Logo />
             </div>
-            <Headerbar />
+            <Headerbar />           
           </div>
           <div className="hidden bg-[#f9ecf3] w-full lg:block">
             <NavbarDesktop />
