@@ -28,7 +28,7 @@ function FooterAccordion () {
         <div
           className={`pl-12 ${activeIndex === 0 ? 'block' : 'hidden'}`}
         >
-          <nav class="my-4 text-[#5D2B7E] text-2xl">
+          <nav className="my-4 text-[#5D2B7E] text-2xl">
               <ul className="flex flex-col gap-2">
                 <li>
                   <a href="#">Vinterjackor</a>
@@ -60,7 +60,7 @@ function FooterAccordion () {
         <div
           className={`pl-12 ${activeIndex === 1 ? 'block' : 'hidden'}`}
         >
-            <nav class="my-4 text-[#5D2B7E] text-2xl">
+            <nav className="my-4 text-[#5D2B7E] text-2xl">
               <ul className="flex flex-col gap-2">
                 <li>
                   <a href="#">Mina ordrar</a>
@@ -86,7 +86,7 @@ function FooterAccordion () {
         <div
           className={`pl-12 ${activeIndex === 2 ? 'block' : 'hidden'}`}
         >
-          <nav class="my-4 text-[#5D2B7E] text-2xl">
+          <nav className="my-4 text-[#5D2B7E] text-2xl">
               <ul className="flex flex-col gap-2">
                 <li>
                   <a href="#">Returnpolicy</a>

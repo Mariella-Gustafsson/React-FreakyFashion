@@ -33,7 +33,7 @@ function Spots () {
         to="/"
         className="w-1/3 relative">
         <img
-          class="opacity-90"
+          className="opacity-90"
           src="http://localhost:8000/images/SpotCasual.jpg"
           alt="Modell klädd i casual stil"
         />
@@ -59,7 +59,7 @@ function Spots () {
         to="/"
         className="w-1/3 relative">
         <img
-          class="opacity-90"
+          className="opacity-90"
           src="http://localhost:8000/images/SpotSporty.jpg"
           alt="Modell klädd  i sport stil"
         />

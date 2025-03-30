@@ -2,8 +2,6 @@ import '../../App.css';
 import { Link } from "react-router-dom";
 
 const ProductCard = ({product}) => {
-
-  console.log(product);
   
   return (
     <Link to={`/products/${product.url_slug}`}>

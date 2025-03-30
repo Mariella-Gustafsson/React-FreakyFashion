@@ -23,11 +23,8 @@ const ProductList = () => {
     
     return newestProducts.map(product => { // map metoden används här här att skapa en ny array
       const productDate = new Date(product.publish_date); //omvandlar datum till datumformat
-      console.log(product.price);
-      console.log(productDate);
       const productDateMs = productDate.getTime();
       const showBadge = productDateMs >= (currentDateMs - sevenDaysMs);
-      console.log(showBadge);
       return { ...product,
         showBadge }; //returnerar en ny array av objekt med tillägget av showBadge
     })
