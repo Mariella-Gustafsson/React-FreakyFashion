@@ -1,4 +1,5 @@
 import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 function CartDesktop () {
 
@@ -6,11 +7,10 @@ function CartDesktop () {
 
   return (
     <section>
-
       { cart.length > 0 ?
-      <table className="min-w-full table-auto border-separate border-spacing-0">
+      (<table className="min-w-full table-auto border-separate border-spacing-0">
         <thead>
-          <tr className="bg-blue-500 text-white">
+          <tr className="bg-[#f9ecf3] text-[#5D2B7E]">
             <th scope="col" className="py-2 px-4 text-left">Produkt</th>
             <th scope="col" className="py-2 px-4 text-left">Antal</th>
             <th scope="col" className="py-2 px-4 text-left">Pris</th>
@@ -47,7 +47,9 @@ function CartDesktop () {
           ))}
         </tbody>
       </table>
-      : <p>Varukorgen är tom</p> }
+    )  : (
+      <p>Varukorgen är tom</p>
+    ) }
     </section>
   );
 }
