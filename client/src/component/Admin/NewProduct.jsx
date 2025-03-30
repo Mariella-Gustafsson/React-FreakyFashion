@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function NewProduct () {
 
@@ -11,6 +12,8 @@ function NewProduct () {
     price: "",
     publish_date: ""
   })
+
+  const navigate = useNavigate();
 
   function generateUrlSlug (product_name) {
     const urlSlug = product_name
@@ -27,7 +30,6 @@ function NewProduct () {
   };
 
   const handleInputChange = (e) => {
-    console.log("handle input change");
     const { name, value } = e.target;
 
     setFormData({
@@ -39,12 +41,9 @@ function NewProduct () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("handle submit");
     const { product_name } = formData;
     const url_slug = generateUrlSlug(product_name);
-    console.log(url_slug);
     const product = {...formData, url_slug: url_slug};
-    console.log(product);
 
     fetch("http://localhost:8000/api/products", {
       method: "POST",
@@ -54,7 +53,6 @@ function NewProduct () {
       body: JSON.stringify(product)
     })
     .then(resp => {
-      console.log("nollställa form");
       setFormData({product_name: "",
       description: "",
       picture_url: "",
@@ -63,6 +61,8 @@ function NewProduct () {
       price: "",
       publish_date: ""
     });
+
+    navigate("/admin/products");
   });
 }
 
