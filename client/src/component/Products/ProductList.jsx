@@ -48,7 +48,6 @@ const ProductList = () => {
   }, []); // Tom beroende-array betyder att det bara körs en gång vid första render
 
   return (
-
     <section className="mx-4 my-5 sm:grid grid-cols-2 gap-4 lg:grid-cols-4">
       {
       products.map((product => {

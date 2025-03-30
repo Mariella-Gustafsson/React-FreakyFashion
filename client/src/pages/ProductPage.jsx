@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ProductDetails from '../component/Products/ProductDetails'
 import { CartProvider } from "../context/CartContext";
 import Carousel from "../component/Products/Carousel";
+import { Helmet } from 'react-helmet';
 
 function ProductPage () {
 
@@ -58,6 +59,9 @@ function ProductPage () {
 
   return (
     <>
+    <Helmet>
+      <title>Produktsidan</title>
+    </Helmet>
       <CartProvider>
         <ProductDetails product = {product} />
       </CartProvider>

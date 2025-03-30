@@ -1,6 +1,5 @@
 import { useCart } from "../../context/CartContext";
 import { useEffect, useState } from "react";
-import { Helmet } from 'react-helmet';
 
 function ProductDetails ({product}) {
   const { cart, addToCart, removeFromCart } = useCart();
@@ -22,9 +21,6 @@ function ProductDetails ({product}) {
 
   return (
     <>
-    <Helmet>
-      <title>{product.name}</title>
-    </Helmet>
     <article className="m-6 md:grid md:grid-cols-2">
     <img
       src={`http://localhost:8000/${product.picture_url}`}
