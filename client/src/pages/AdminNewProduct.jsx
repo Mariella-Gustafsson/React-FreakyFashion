@@ -1,9 +1,15 @@
 import NewProduct from "../component/Admin/NewProduct";
+import { Helmet } from 'react-helmet';
 
 function AdminNewProduct () {
 
   return (
-    <NewProduct />
+    <>
+      <Helmet>
+        <title>Administration</title>
+      </Helmet>
+      <NewProduct />
+    </>
   )
 }
 

@@ -59,9 +59,9 @@ function ProductPage () {
 
   return (
     <>
-    <Helmet>
-      <title>Produktsidan</title>
-    </Helmet>
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <CartProvider>
         <ProductDetails product = {product} />
       </CartProvider>

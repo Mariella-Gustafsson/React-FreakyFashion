@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../services/api";
 import ProductCard from "../component/Products/ProductCard";
+import { Helmet } from 'react-helmet';
 
 function SearchPage() {
   const location = useLocation();
@@ -47,6 +48,9 @@ function SearchPage() {
 
   return (
     <main>
+      <Helmet>
+        <title>Freaky Fashion</title>
+      </Helmet>
       <section className="flex flex-col m-5">
         <h1 className="text-3xl font-bold mb-5 text-center">Hittade {searchResults.length} produkter</h1>
         <div className="sm:grid grid-cols-2 gap-4 lg:grid-cols-4">

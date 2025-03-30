@@ -1,9 +1,15 @@
 import ProductTable from "../component/Admin/ProductTable";
+import { Helmet } from 'react-helmet';
 
 function AdminList () {
 
   return (
-    <ProductTable />
+    <>
+      <Helmet>
+        <title>Administration</title>
+      </Helmet>
+      <ProductTable />
+    </>
   )
 }
 

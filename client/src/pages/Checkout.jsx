@@ -3,11 +3,15 @@ import CartMobile from "../component/CartCheckout/CartMobile";
 import CheckoutForm from "../component/CartCheckout/CheckoutForm";
 import { CartProvider } from "../context/CartContext";
 import BuyButton from "../component/Buttons/BuyButton";
+import { Helmet } from 'react-helmet';
 
 function Checkout () {
 
   return (
     <main>
+      <Helmet>
+        <title>Kassan</title>
+      </Helmet>
       <CartProvider>
         <div className="sm:hidden">
           <CartMobile />
