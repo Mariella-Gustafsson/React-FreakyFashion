@@ -8,9 +8,8 @@ function SearchPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const searchTerm = queryParams.get('query'); 
-  console.log(searchTerm);
   const splitSearchTerm = searchTerm.split(" ");
-  console.log(splitSearchTerm);
+
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,8 +22,6 @@ function SearchPage() {
       product.description.toLowerCase().includes(term.toLowerCase())
       )
     )
-
-    console.log(searchResults);
 
     return searchResults;
   };

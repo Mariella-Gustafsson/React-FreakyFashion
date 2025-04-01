@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import { fetchProducts } from '../services/api';
 
 // Skapa en context för varukorgen
 const CartContext = createContext();
