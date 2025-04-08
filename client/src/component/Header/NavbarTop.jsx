@@ -1,26 +1,28 @@
+import { Link } from "react-router-dom";
+
 const Headerbar = () => {
   return (
     <ul className="flex justify-between font-bold text-lg text-[#5D2B7E] lg:items-center lg:gap-4">
       
       <li className="font-[Rowdies] text-lg">
-        <a href="#" className="hover:text-[#eb9fc5]">
+        <Link to="#" className="hover:text-[#eb9fc5]">
           Nyheter
-        </a>
+        </Link>
       </li>
       <li className="sm:mr-6 font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <a href="#">
+        <Link to="#">
           Topplistan
-        </a>
+        </Link>
       </li>
       <li className="sm:mr-6 font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <a href="#">
+        <Link to="#">
           Rea
-        </a>
+        </Link>
       </li>
       <li className="font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <a href="#">
+        <Link to="#">
           Kampanjer
-        </a>
+        </Link>
       </li>
     </ul>
   );
