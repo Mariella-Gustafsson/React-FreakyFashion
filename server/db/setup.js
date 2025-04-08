@@ -21,7 +21,7 @@ const rowCount = db.prepare('SELECT COUNT(*) AS count FROM products').get().coun
 if (rowCount === 0) {
   // Lägg till initiala produkter
   const insert = db.prepare(`
-    INSERT INTO products (product_name, price, brand, picture_url, description, SKU, publish_date, url_slug)
+    INSERT INTO products (name, price, brand, picture_url, description, SKU, publish_date, url_slug)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
