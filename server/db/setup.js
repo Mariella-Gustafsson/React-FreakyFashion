@@ -5,7 +5,7 @@ const db = new Database('db/products-database.db');
 db.exec(`
   CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    product_name TEXT NOT NULL,
+    name TEXT NOT NULL,
     price INTEGER NOT NULL,
     brand TEXT NOT NULL,
     picture_url TEXT NOT NULL,
