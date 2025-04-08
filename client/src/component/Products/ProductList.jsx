@@ -4,9 +4,9 @@ import ProductCard from "./ProductCard";
 
 const ProductList = () => {
 
-  const currentDate = new Date(); // dagens datum
+  const currentDate = new Date();
   const currentDateMs = currentDate.getTime();
-  const sevenDaysMs = 7 * 24 * 60 * 60 * 1000; // 7 dagar i milisekunder, används för att jämföra datum
+  const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
   const [products, setNewestProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,12 +21,12 @@ const ProductList = () => {
     filterFutureProducts = filterFutureProducts.sort((a,b) => new Date(b.publish_date) - new Date(a.publish_date));
     const newestProducts = filterFutureProducts.slice(0,8);
     
-    return newestProducts.map(product => { // map metoden används här här att skapa en ny array
-      const productDate = new Date(product.publish_date); //omvandlar datum till datumformat
+    return newestProducts.map(product => {
+      const productDate = new Date(product.publish_date);
       const productDateMs = productDate.getTime();
       const showBadge = productDateMs >= (currentDateMs - sevenDaysMs);
       return { ...product,
-        showBadge }; //returnerar en ny array av objekt med tillägget av showBadge
+        showBadge };
     })
   }
   
@@ -42,7 +42,7 @@ const ProductList = () => {
       setLoading(false);
       console.log("Produkterna kunde inte laddas. Felmeddelande: " + err)
     });
-  }, []); // Tom beroende-array betyder att det bara körs en gång vid första render
+  }, []);
 
   return (
     <section className="mx-4 my-5 sm:grid grid-cols-2 gap-4 lg:grid-cols-4">
