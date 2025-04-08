@@ -18,10 +18,13 @@ Projektet inkluderar även ett skript för att skapa och konfigurera en databas.
 1. **Klona repo**  
       Kör följande kommando i terminalen  
       git clone https://github.com/Mariella-Gustafsson/React-FreakyFashion.git  
+      Öppna projektmappen i ditt valda utvecklingsverktyg. Om du använder Visual Studio Code, kör:
       cd React-FreakyFashion
+      code .
 
 3. **Installera beroenden på serversidan**
 
+   Starta den inbyggda terminalen och kör:  
     cd server  
     npm install
     
@@ -35,7 +38,7 @@ Projektet inkluderar även ett skript för att skapa och konfigurera en databas.
 
 6. **Installera beroenden på clientsidan**
 
-    cd ..  
+    Start en ny inbyggd terminal och kör:
     cd client  
     npm install
 
