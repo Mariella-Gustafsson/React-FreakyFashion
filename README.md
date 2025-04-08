@@ -16,29 +16,29 @@ Projektet inkluderar även ett skript för att skapa och konfigurera en databas.
 ## Installation och Setup
 
 1. **Klona repo**  
-   Kör följande kommando i terminalen
-   git clone https://github.com/Mariella-Gustafsson/React-FreakyFashion.git
-   cd React-FreakyFashion
+      Kör följande kommando i terminalen  
+      git clone https://github.com/Mariella-Gustafsson/React-FreakyFashion.git  
+      cd React-FreakyFashion
 
-2. **Installera beroenden på serversidan**
+3. **Installera beroenden på serversidan**
 
-    cd server
+    cd server  
     npm install
     
-3. **Skapa och initiera databasen**
+4. **Skapa och initiera databasen**
 
     node db/setup.js
 
-4. **Starta backend-servern**
+5. **Starta backend-servern**
 
     npm run dev
 
-5. **Installera beroenden på clientsidan**
+6. **Installera beroenden på clientsidan**
 
-    cd ..
-    cd client
+    cd ..  
+    cd client  
     npm install
 
-6. **Starta frontend-servern**
+7. **Starta frontend-servern**
 
     npm run dev
