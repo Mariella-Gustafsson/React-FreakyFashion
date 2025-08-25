@@ -21,6 +21,8 @@ app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
 
+
+// API endpoints för produkter
 app.get('/api/products/:url_slug', (req, res, next) => {
 
   const slug = req.params.url_slug;
@@ -40,7 +42,7 @@ app.get('/api/products/:url_slug', (req, res, next) => {
 
   res.json(product);
     
-  })
+  });
 
 app.get('/api/products', (req, res, next) => {
 
@@ -88,7 +90,7 @@ app.post('/api/products', (req, res, next) => {
 
   res.status(201).send();
 
-})
+});
 
 app.delete('/api/products/:id', (req, res, next) => {
 
@@ -103,4 +105,19 @@ app.delete('/api/products/:id', (req, res, next) => {
 
   res.status(200).send();
 
-})
+});
+
+// API endpoints för kategorier
+
+app.get('/api/categories', (req, res, next) => {
+ 
+    const categories = db.prepare(`
+    SELECT category_name, 
+          category_picture
+    FROM categories`)
+        .all();
+
+  res.json(categories);
+}
+
+)

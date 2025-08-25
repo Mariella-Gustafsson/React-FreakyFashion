@@ -14,3 +14,8 @@ export async function removeProduct (id) {
   });
   return response.ok;
 }
+
+export async function fetchCategories() {
+  const response = await fetch("http://localhost:8000/api/categories");
+  return response.json();
+}

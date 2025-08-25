@@ -1,29 +1,44 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchCategories } from "../../services/api";
 
 const Headerbar = () => {
+
+  const [categories, setCategories] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+
+    fetchCategories()
+    .then(data => {
+      setCategories(data);
+  })
+    .catch(err => {
+      setError(err);
+      setLoading(false);
+      console.log("Produkterna kunde inte laddas. Felmeddelande: " + err)
+  })
+  }, []);
+
   return (
     <ul className="flex justify-between font-bold text-lg text-[#5D2B7E] lg:items-center lg:gap-4">
-      
+
       <li className="font-[Rowdies] text-lg">
         <Link to="#" className="hover:text-[#eb9fc5]">
           Nyheter
         </Link>
       </li>
-      <li className="sm:mr-6 font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <Link to="#">
-          Topplistan
-        </Link>
-      </li>
-      <li className="sm:mr-6 font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <Link to="#">
-          Rea
-        </Link>
-      </li>
-      <li className="font-[Rowdies] text-lg hover:text-[#eb9fc5]">
-        <Link to="#">
-          Kampanjer
-        </Link>
-      </li>
+      {
+        categories.map((category => {
+          return (
+            <li key={category.id} className="font-[Rowdies] text-lg">
+              <Link to="#" className="hover:text-[#eb9fc5]">
+                {category.category_name}
+              </Link>
+            </li>
+          )
+        }))
+      }
     </ul>
   );
 };
