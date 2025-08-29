@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import AdminAside from "../component/Admin/AdminAside";
 import AdminHeader from "../component/Header/AdminHeader";
 
@@ -11,7 +12,7 @@ function AdminLayout ({children}) {
 
         <div className="w-full">
         <main className="overflow-auto">
-          {children}
+          <Outlet />
         </main>
         </div>
       </div>

@@ -22,3 +22,13 @@
     color: #4B0082;
   }
 }
+
+.bi-heart,
+.bi-heart-fill {
+  color: #4B0082;
+}
+
+.bi-heart:hover,
+.bi-heart-fill:hover {
+  color: #eb9fc5;
+}

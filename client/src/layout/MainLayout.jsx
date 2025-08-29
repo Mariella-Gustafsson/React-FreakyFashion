@@ -1,5 +1,6 @@
 import Header from "../component/Header/Header";
 import Footer from "../component/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function MainLayout ({children}) {
 
@@ -8,7 +9,7 @@ function MainLayout ({children}) {
       <Header />
 
       <main>
-        {children}
+        <Outlet />
       </main>
 
       <Footer />

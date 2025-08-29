@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchCategories } from "../../services/api";
 
-const Headerbar = () => {
+const NavbarTop= () => {
 
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
@@ -43,4 +43,4 @@ const Headerbar = () => {
   );
 };
 
-export default Headerbar;
+export default NavbarTop;

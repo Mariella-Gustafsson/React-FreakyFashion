@@ -18,27 +18,41 @@ import Register from './pages/Register';
 import AdminCategories from './pages/AdminCategories';
 import AdminNewCategory from './pages/AdminNewCategory';
 import Denied from './pages/Denied';
+import { FavoritesProvider } from './context/FavoritesContext';
 
 function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<MainLayout><Home /></MainLayout>} />
-      <Route path="/products/:url_slug" element={<MainLayout><ProductPage /></MainLayout>} />
-      <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
-      <Route path="/basket" element={<MainLayout><Cart /></MainLayout>} />
-      <Route path="/checkout" element={<MainLayout><Checkout /></MainLayout>} />
-      <Route path="/favorites" element={<MainLayout><Favorites /></MainLayout>} />
-      <Route path="/categories/:category_name" element={<MainLayout><CategoryPage /></MainLayout>} />
-      <Route path="/news" element={<MainLayout><Nyheter /></MainLayout>} />
-      <Route path="/order/confirmation/:order_id" element={<MainLayout><OrderConfirmation /></MainLayout>} />
-      <Route path="/login" element={<MainLayout><Login /></MainLayout>} />
-      <Route path="/denied" element={<AdminLayout><Denied /></AdminLayout>} />
-      <Route path="/register" element={<MainLayout><Register /></MainLayout>} />
-      <Route path="/admin/products" element={<AdminLayout><AdminList /></AdminLayout>} />
-      <Route path="/admin/products/new" element={<AdminLayout><AdminNewProduct /></AdminLayout>} />
-      <Route path="/admin/categories" element={<AdminLayout><AdminCategories /></AdminLayout>} />
-      <Route path="/admin/categories/new" element={<AdminLayout><AdminNewCategory /></AdminLayout>} />
+      <Route element={
+        <FavoritesProvider>
+          <MainLayout />
+        </FavoritesProvider>
+        }
+      >
+        {/* Användarroutes med layout */}
+        <Route path="/" element={<Home />} />
+        <Route path="/products/:url_slug" element={<ProductPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/basket" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/categories/:category_name" element={<CategoryPage />} />
+        <Route path="/news" element={<Nyheter />} />
+        <Route path="/order/confirmation/:order_id" element={<OrderConfirmation />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
+
+
+      <Route element={<AdminLayout />}>
+        {/* Adminroutes med layout */}
+        <Route path="/denied" element={<Denied />} />
+        <Route path="/admin/products" element={<AdminList />} />
+        <Route path="/admin/products/new" element={<AdminNewProduct />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/categories/new" element={<AdminNewCategory />} />
+      </Route>
     </Routes>
   )
 }

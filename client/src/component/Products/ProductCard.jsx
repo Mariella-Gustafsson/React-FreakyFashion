@@ -1,9 +1,31 @@
 import '../../App.css';
 import { Link } from "react-router-dom";
+import { useWishlist } from '../../context/FavoritesContext';
+import { useEffect, useState } from "react";
 
 const ProductCard = ({product}) => {
+
+  const { favorites, addToFavorites, removeFromFavorites } = useWishlist();
+  const [existingWishlistItem, setExistingWishlistItem] = useState(false);
+
+  useEffect(() => {
+    const itemInWishlist = favorites.some(item => item.id === product.id);
+    setExistingWishlistItem(itemInWishlist);
+  }, [favorites]);
   
+  const handleClick = (product) => {
+      
+    if (existingWishlistItem) {
+      removeFromFavorites(product);
+      console.log(favorites);
+    } else {
+      addToFavorites(product);
+      console.log(favorites);
+    }
+  };
+
   return (
+    <div className="relative">
     <Link to={`/products/${product.url_slug}`}>
       <figure>
         <div className="relative">
@@ -17,7 +39,6 @@ const ProductCard = ({product}) => {
             Nyhet
           </div>
           : <span></span> }
-          <i className="bi bi-heart text-4xl absolute bottom-4 right-4"></i>
         </div>
         <figcaption className="grid grid-cols-2 my-3 gap-2">
           <h2 className="text-lg font-bold">{product.name}</h2>
@@ -26,6 +47,12 @@ const ProductCard = ({product}) => {
         </figcaption>
       </figure>
     </Link>
+    <i 
+      className={`${existingWishlistItem ? "bi bi-heart-fill" : "bi bi-heart"} text-4xl absolute bottom-30 right-4`}
+      onClick={() => handleClick(product)}
+    >
+    </i>
+  </div>
 
   )
 }
