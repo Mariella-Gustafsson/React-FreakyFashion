@@ -11,6 +11,9 @@ const Headerbar = () => {
       <Link to={"/basket"}>
         <i className="bi bi-basket-fill text-2xl flex-shrink-0 text-[#5D2B7E] hover:text-[#eb9fc5]"></i>
       </Link>
+      <Link to={"/login"}>
+        <i className="bi bi-box-arrow-in-right text-3xl flex-shrink-0 text-[#5D2B7E] hover:text-[#eb9fc5]"></i>
+      </Link>
     </div>
   );
 };

@@ -19,3 +19,8 @@ export async function fetchCategories() {
   const response = await fetch("http://localhost:8000/api/categories");
   return response.json();
 }
+
+export async function fetchCategoryProducts(category) {
+  const response = await fetch(`http://localhost:8000/api/categories/${category}`);
+  return response.json();
+}

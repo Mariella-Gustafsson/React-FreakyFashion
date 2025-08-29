@@ -37,7 +37,7 @@ function App() {
         <Route path="/basket" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/categories/:category_name" element={<CategoryPage />} />
+        <Route path="/categories/:category" element={<CategoryPage />} />
         <Route path="/news" element={<Nyheter />} />
         <Route path="/order/confirmation/:order_id" element={<OrderConfirmation />} />
         <Route path="/login" element={<Login />} />

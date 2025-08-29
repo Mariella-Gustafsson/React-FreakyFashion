@@ -118,6 +118,25 @@ app.get('/api/categories', (req, res, next) => {
         .all();
 
   res.json(categories);
-}
-
+  }
 )
+
+app.get('/api/categories/:category', (req, res, next) => {
+
+  const category = req.params.category;
+
+  const { id } = db.prepare(`
+    SELECT id
+    FROM categories
+    WHERE category_name = ?
+  `).get(category);
+
+  const categoryProducts = db.prepare(`
+    SELECT products.id, products.name, products.price, products.brand, products.picture_url, products.url_slug
+    FROM products
+    JOIN product_categories ON products.id = product_categories.product_id
+    WHERE product_categories.category_id = ?;
+  `).all(id);
+
+  res.json(categoryProducts);
+})

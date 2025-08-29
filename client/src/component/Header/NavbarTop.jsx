@@ -24,7 +24,7 @@ const NavbarTop= () => {
     <ul className="flex justify-between font-bold text-lg text-[#5D2B7E] lg:items-center lg:gap-4">
 
       <li className="font-[Rowdies] text-lg">
-        <Link to="#" className="hover:text-[#eb9fc5]">
+        <Link to={"/news"} className="hover:text-[#eb9fc5]">
           Nyheter
         </Link>
       </li>
@@ -32,7 +32,7 @@ const NavbarTop= () => {
         categories.map((category => {
           return (
             <li key={category.id} className="font-[Rowdies] text-lg">
-              <Link to="#" className="hover:text-[#eb9fc5]">
+              <Link to={`/categories/${category.category_name}`} className="hover:text-[#eb9fc5]">
                 {category.category_name}
               </Link>
             </li>

@@ -17,10 +17,8 @@ const ProductCard = ({product}) => {
       
     if (existingWishlistItem) {
       removeFromFavorites(product);
-      console.log(favorites);
     } else {
       addToFavorites(product);
-      console.log(favorites);
     }
   };
 
@@ -28,9 +26,9 @@ const ProductCard = ({product}) => {
     <div className="relative">
     <Link to={`/products/${product.url_slug}`}>
       <figure>
-        <div className="relative">
+        <div className="w-full h-[500px]">
           <img
-            className="opacity-75 hover:opacity-100"
+            className="w-full h-full opacity-75 hover:opacity-100 object-cover"
             src={`http://localhost:8000/${product.picture_url}`}
             alt={`${product.name}`}
           />
